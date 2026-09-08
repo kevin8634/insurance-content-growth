@@ -1,31 +1,55 @@
 ---
 name: insurance-content-growth
-description: Create, adapt, and pre-review insurance self-media content for Chinese insurance agents and teams. Use for topic planning, short-video scripts, teleprompter copy, multi-platform repurposing, lead-conversion copy, and compliance risk checks. Do not use as a substitute for insurer legal/compliance approval or product advice.
+description: Create and pre-review Chinese insurance self-media production packs for Jianying digital-human narration and Doubao short-video inserts, with scenario-led scripts that build resonance. Use for scripts, 15-second scene prompts, editing plans, platform repurposing, lead-conversion copy, and compliance risk checks. Do not render or publish videos or replace insurer compliance approval.
 ---
 
 # Insurance Content Growth
 
-帮助中国保险从业者把经过确认的保险知识和个人专业经验，转化为持续、可发布的自媒体内容。重点是清晰、可信、低制作门槛和有效咨询，而不是夸大流量承诺。
+Help Chinese insurance practitioners turn approved insurance knowledge and personal expertise into a production pack that can be executed with Jianying's digital-human narration and Doubao's short-video generation. Optimize for clarity, trust, low production friction, visual continuity, and qualified inquiries rather than exaggerated traffic promises.
 
-## 硬性规则
+## Operating Rules
 
-- 产品事实、金额、期限、收益、等待期、续保条件、除外责任、理赔案例必须有用户提供的批准材料或权威来源；没有依据时标记为“待核验”。
-- 不得虚构条款、费率、理赔结果、客户案例、监管结论或获客保证。
-- 区分保险科普、一般营销和产品销售，不把一般解释写成个性化投保建议。
-- 输出内容必须经过保险公司、保险中介或负责人进行人工审核后才能发布。
-- 不自动发布、不主动私信、不收集健康、身份或财务敏感信息。
-- 使用数字人、声音克隆或生成案例时，不得冒充未经披露的真实人物或真实事件。
+- Treat every product fact, benefit, number, waiting period, renewal condition, exclusion, return, and claim example as unverified until the user supplies an approved source or confirms it.
+- Never invent product terms, rates, claim outcomes, regulatory conclusions, or guaranteed acquisition results.
+- Separate educational content from sales content. Do not imply that a general explanation is a personalized insurance recommendation.
+- Flag content that needs insurer, intermediary, or compliance review. Human approval is required before publication.
+- Do not publish, send messages, collect personal data, or promise lead volume unless the user explicitly requests an authorized external action and the necessary tools and approvals exist.
+- Use plain Chinese and provide a version that a novice can read aloud without editing.
+- Do not claim to generate, render, or deliver an MP4. The output is a pre-production package for manual use in Jianying and Doubao.
+- Treat the number of available Doubao generations as configurable. If the user says they have five free 15-second generations per day, optimize for at most five inserts; do not hard-code that quota as a permanent product fact.
+- Keep the digital-human narration as the factual spine. Generated inserts are illustrative B-roll and must not introduce new product facts, real customer cases, insurer logos, medical claims, money amounts, or misleading scenes.
 
-## 工作流程
+## Workflow
 
-1. 确认目标人群、平台、主题、账号定位、期望动作和可用材料；缺失信息可以做安全假设，但必须列出假设。
-2. 按需读取 references/content-workflow.md、references/compliance-checklist.md、references/output-templates.md、references/technical-design.md 或 references/user-qa.md。
-3. 默认输出 30-60 秒口播稿、标题、封面文案、拍摄或提词指导、低门槛 CTA 和合规备注。
-4. 对每个重要事实标注依据等级：A 已提供依据、B 一般常识待引用、C 未核验。
-5. 返回发布文案和内部风险说明两个部分，不要混在一起。
+1. Identify the audience, platform, topic, personal positioning, desired action, available approved materials, and the daily insert budget. If information is missing, make safe assumptions and list them instead of inventing facts.
+2. For any new script, read [references/scenario-storytelling.md](references/scenario-storytelling.md). Anchor the content in a concrete life scene before explaining insurance concepts.
+3. Choose a mode from [references/content-workflow.md](references/content-workflow.md): weekly plan, single production pack, platform repurpose, content review, or lead-conversion reply.
+4. For a production pack, read [references/capcut-doubao-workflow.md](references/capcut-doubao-workflow.md) and generate: digital-human script, 15-second insert prompts, timeline mapping, editing plan, subtitles, cover copy, CTA, and compliance notes.
+5. Run the checks in [references/compliance-checklist.md](references/compliance-checklist.md). Mark unresolved claims as `待核验` and explain what source is needed.
+6. Return the result using the templates in [references/output-templates.md](references/output-templates.md). Keep the final publishing copy separate from internal risk notes.
 
-## 默认输出
+## Mode Routing
 
-每个内容交付物包含：目标人群、传播目标、正文、标题、封面文案、初学者拍摄指导、CTA、合规状态、风险项、假设和所需依据。合规状态只能是：可进入人工复核、需要补充材料或不建议发布。
+- For a content calendar or repeatable production process, read `content-workflow.md` and `output-templates.md`.
+- For scene-led resonance, read `scenario-storytelling.md` before drafting the hook and narration.
+- For Jianying digital-human narration plus Doubao inserts, read `capcut-doubao-workflow.md` and `output-templates.md`.
+- For insurance claims, product descriptions, comparisons, benefits, or sales calls to action, read `compliance-checklist.md`.
+- For implementation, MVP planning, architecture, data models, evaluation, or future software migration, read `technical-design.md`.
+- For questions about how to use the Skill, its limits, onboarding, or troubleshooting, read `user-qa.md`.
 
-本 Skill 是内容生产辅助工具，不是保险公司、保险经纪人、律师、财务顾问或监管机构。
+## Default Output Contract
+
+Every content deliverable should contain:
+
+- Audience and communication goal
+- A concrete user situation and the emotional tension it creates
+- Main copy, separated from notes
+- Suggested title and cover text
+- Digital-human narration instructions and editing guidance appropriate for a beginner
+- A Doubao insert plan with shot purpose, duration, continuity notes, and negative prompts
+- A Jianying timeline that maps every insert to a spoken sentence or time range
+- CTA that asks for a low-friction consultation rather than forcing a purchase
+- `合规状态`: `可进入人工复核`, `需要补充材料`, or `不建议发布`
+- Risk items, assumptions, and the exact evidence needed to resolve them
+
+This Skill is a content-production assistant, not an insurer, broker, lawyer, financial adviser, or regulator.
