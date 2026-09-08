@@ -1,42 +1,76 @@
 # Technical Design
 
-## 产品定位
+## Product Positioning
 
-本 Skill 是保险内容增长与合规预审软件的 MVP。核心价值不是通用文案生成，而是保险场景工作流、来源意识、初学者制作指导和人工审核节点。
+The Skill is the MVP for an eventual “insurance content growth and compliance pre-review” product. Its core value is not generic text generation or video rendering. It combines an insurance-domain content workflow, source-aware claims handling, beginner production guidance, a Jianying/Doubao production pack, and a human review checkpoint.
 
-## MVP 范围
+## MVP Scope
 
-包含：周内容计划、短视频口播稿、提词稿、多平台改写、CTA、评论回复、依据等级、合规预审和可复制导出。
+### In Scope
 
-不包含：自动核保、自动投保、自动发布、自动私信、最终法律审核、未经控制的产品数据库、健康身份财务信息收集、成交保证。
+- User brief to weekly content plan
+- Single short-video script and teleprompter copy
+- Platform-specific repurposing
+- CTA and public-comment reply suggestions
+- Evidence labels and compliance pre-review
+- Exportable structured output for manual Jianying and Doubao production
 
-## 软件架构
+### Out of Scope for MVP
 
-1. Brief Layer：账号、受众、平台、主题、目标和资料。
-2. Knowledge Layer：带保险公司、产品、版本、生效日和区域的批准材料库。
-3. Generation Layer：按内容模式生成结构化结果。
-4. Claim Layer：抽取重要事实并绑定 A/B/C 依据等级。
-5. Review Layer：规则检查、人工审核、版本历史和审计记录。
-6. Delivery Layer：文案导出、提词器、字幕和未来的视频渲染。
-7. Analytics Layer：发布、咨询、有效咨询和反馈，不把播放量直接等同成交。
+- Automatic insurance recommendation or underwriting
+- Automatic publication, direct customer outreach, or video rendering inside the Skill
+- Final legal/compliance approval
+- Product database without a controlled update process
+- Collection or storage of health, identity, or financial data
+- Claims or sales conversion guarantees
 
-## 最小数据模型
+## Suggested Software Architecture
 
-- creator_profile：角色、机构、执业区域、语气和目标人群。
-- source_document：标题、发布方、版本、生效日、失效日、权限和哈希。
-- content_request：需求、平台、目标、格式和创建者。
-- content_version：草稿、依据映射、风险状态、审核人和时间。
-- lead_event：来源内容、同意状态、渠道和资格状态。
-- audit_event：操作者、动作、时间和版本变化。
+1. `Brief Layer`: persona, audience, platform, topic, objective, and source uploads.
+2. `Knowledge Layer`: versioned approved documents with insurer, product, effective date, region, and usage scope.
+3. `Generation Layer`: mode-specific prompt and output schema.
+4. `Claim Layer`: extract claims, attach evidence level, and block unsupported material claims.
+5. `Review Layer`: rule checks plus human approval, with immutable version history.
+6. `Delivery Layer`: paste-ready narration, Doubao prompt pack, timeline map, subtitle text, and Jianying assembly checklist. Video rendering remains external.
+7. `Analytics Layer`: publish status, inquiry count, qualified inquiry, and user feedback. Do not infer sales causality from views alone.
 
-## 安全与可靠性
+## Data Model Minimum
 
-所有材料和内容都要版本化；过期材料隔离；生成文案、依据映射和审核决定一起保存；日志脱敏；内容标记为可发布前必须明确确认；规则阻断保持确定性；模型只负责解释和改写建议。
+- `creator_profile`: role, organization, licensed region, tone, target audience
+- `source_document`: title, issuer, version, effective date, expiry date, access scope, hash
+- `content_request`: brief, platform, objective, requested format, created by
+- `content_version`: draft, evidence map, risk status, reviewer, approved time
+- `lead_event`: source content, consent status, channel, qualification status
+- `audit_event`: actor, action, timestamp, previous version, new version
+- `production_pack`: narration version, insert prompts, insert budget, timeline map, editing plan, disclosure status
 
-## 评估
+## Safety and Reliability
 
-用科普、产品说明、理赔流程和线索回复四类真实请求评估：事实可追溯、风险召回、新手可拍摄、平台适配、CTA 质量和重复运行稳定性。先做 20 次访谈和人工陪跑试用，重复使用加预付费比一次性好评更重要。
+- Version every source and generated content item.
+- Expire or quarantine source documents that are past their effective date.
+- Keep generated copy, evidence mapping, and reviewer decision together.
+- Redact sensitive data from logs and prompts.
+- Require explicit confirmation before content is marked ready for publication.
+- Make rule-based blocking deterministic; use the model for explanation and rewrite suggestions.
+- Treat analytics as directional unless there is a controlled attribution method.
+- Keep the approved narration version and the generated-insert version linked; never allow a later script edit to silently invalidate an already-reviewed production pack.
 
-## 演进路线
+## Evaluation Plan
 
-Skill-only → 轻量 Web 应用 → 团队审核、权限和审计 → 提词器、字幕、配音和视频渲染。
+Test with realistic requests across education, product explanation, claims guidance, and lead replies. Score:
+
+- Factual grounding: every material claim has acceptable evidence.
+- Risk detection: blocking phrases and missing conditions are flagged.
+- Usability: a novice can record the script without rewriting it.
+- Platform fit: title, length, and structure match the selected platform.
+- Conversion quality: CTA produces qualified questions without pressure.
+- Stability: the same source and brief produce materially consistent risk decisions.
+
+Start with 20 interviews and a concierge pilot. The strongest paid signal is repeated weekly use plus prepayment, not compliments or one-time generations.
+
+## Migration Path
+
+1. Skill-only: prompt workflow and manual source confirmation.
+2. Lightweight web app: saved profiles, source uploads, reusable templates, and exports.
+3. Team product: review queue, role permissions, document versioning, and audit trail.
+4. Optional media layer: provider integrations only after the manual Jianying/Doubao workflow proves retention, cost tolerance, and compliance handling.
