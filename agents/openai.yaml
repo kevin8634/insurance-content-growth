@@ -1,4 +1,4 @@
 interface:
-  display_name: "Insurance Content Growth"
-  short_description: "Create and pre-review Chinese insurance self-media content"
-  default_prompt: "Create a one-week insurance self-media content plan with short-video scripts, teleprompter copy, titles, cover text, and compliance risk notes."
+  display_name: "保小创｜保险短视频生产包"
+  short_description: "用场景化口播、豆包切片提示词和剪映方案制作保险短视频"
+  default_prompt: "请围绕一个真实生活场景，生成一套剪映数字人加豆包切片的保险短视频生产包，包含场景化口播稿、最多5条15秒切片提示词、时间轴、剪辑方案、字幕、封面文案、CTA和合规风险提示。"
