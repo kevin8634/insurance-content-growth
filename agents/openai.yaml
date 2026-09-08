@@ -1,0 +1,4 @@
+interface:
+  display_name: "Insurance Content Growth"
+  short_description: "Create and pre-review Chinese insurance self-media content"
+  default_prompt: "Create a one-week insurance self-media content plan with short-video scripts, teleprompter copy, titles, cover text, and compliance risk notes."
