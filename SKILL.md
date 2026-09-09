@@ -1,11 +1,14 @@
 ---
 name: insurance-content-growth
-description: Create and pre-review Chinese insurance self-media production packs for Jianying digital-human narration and Doubao short-video inserts, with scenario-led scripts that build resonance. Use for scripts, 15-second scene prompts, editing plans, platform repurposing, lead-conversion copy, and compliance risk checks. Do not render or publish videos or replace insurer compliance approval.
+description: Create and pre-review Chinese insurance self-media production packs and guide a scoped 7-day AI agent training experiment for insurance practitioners. Use for scenario-led content, Jianying digital-human narration, Doubao inserts, AI work maps, customer management, role-play practice, assignment review, and camp graduation outputs. Do not render, publish, manage cohorts, or replace insurer compliance approval.
+metadata:
+  version: "0.2.0"
+  short-description: "保小创 v0.2.0：短视频生产与7天AI代理人训练营"
 ---
 
-# Insurance Content Growth
+# 保小创｜保险短视频与 7 天 AI 代理人实验
 
-Help Chinese insurance practitioners turn approved insurance knowledge and personal expertise into a production pack that can be executed with Jianying's digital-human narration and Doubao's short-video generation. Optimize for clarity, trust, low production friction, visual continuity, and qualified inquiries rather than exaggerated traffic promises.
+Help Chinese insurance practitioners turn approved insurance knowledge and personal expertise into executable content and a scoped 7-day AI work experiment. The current small release is `v0.2.0`, not the complete V1 product. Optimize for clarity, trust, low production friction, useful work outputs, and qualified inquiries rather than exaggerated traffic promises.
 
 ## Operating Rules
 
@@ -22,20 +25,23 @@ Help Chinese insurance practitioners turn approved insurance knowledge and perso
 ## Workflow
 
 1. Identify the audience, platform, topic, personal positioning, desired action, available approved materials, and the daily insert budget. If information is missing, make safe assumptions and list them instead of inventing facts.
-2. For any new script, read [references/scenario-storytelling.md](references/scenario-storytelling.md). Anchor the content in a concrete life scene before explaining insurance concepts.
-3. Choose a mode from [references/content-workflow.md](references/content-workflow.md): weekly plan, single production pack, platform repurpose, content review, or lead-conversion reply.
-4. For a production pack, read [references/capcut-doubao-workflow.md](references/capcut-doubao-workflow.md) and generate: digital-human script, 15-second insert prompts, timeline mapping, editing plan, subtitles, cover copy, CTA, and compliance notes.
-5. Run the checks in [references/compliance-checklist.md](references/compliance-checklist.md). Mark unresolved claims as `待核验` and explain what source is needed.
-6. Return the result using the templates in [references/output-templates.md](references/output-templates.md). Keep the final publishing copy separate from internal risk notes.
+2. If the request is about the 7-day experiment, read [references/training-camp.md](references/training-camp.md), identify the day or mode, and return the task, input requirements, output, acceptance criteria, and next action.
+3. For any new script, read [references/scenario-storytelling.md](references/scenario-storytelling.md). Anchor the content in a concrete life scene before explaining insurance concepts.
+4. Choose a content mode from [references/content-workflow.md](references/content-workflow.md): weekly plan, single production pack, platform repurpose, content review, or lead-conversion reply.
+5. For a production pack, read [references/capcut-doubao-workflow.md](references/capcut-doubao-workflow.md) and generate: digital-human script, 15-second insert prompts, timeline mapping, editing plan, subtitles, cover copy, CTA, and compliance notes.
+6. Run the checks in [references/compliance-checklist.md](references/compliance-checklist.md). Mark unresolved claims as `待核验` and explain what source is needed.
+7. Return the result using the relevant template. Keep publishing copy, learner feedback, and internal risk notes separate.
 
 ## Mode Routing
 
 - For a content calendar or repeatable production process, read `content-workflow.md` and `output-templates.md`.
+- For the 7-day AI agent experiment, read `training-camp.md`; do not invent extra course days or promise business outcomes.
 - For scene-led resonance, read `scenario-storytelling.md` before drafting the hook and narration.
 - For Jianying digital-human narration plus Doubao inserts, read `capcut-doubao-workflow.md` and `output-templates.md`.
 - For insurance claims, product descriptions, comparisons, benefits, or sales calls to action, read `compliance-checklist.md`.
 - For implementation, MVP planning, architecture, data models, evaluation, or future software migration, read `technical-design.md`.
 - For questions about how to use the Skill, its limits, onboarding, or troubleshooting, read `user-qa.md`.
+- For learner assignment feedback, use the assignment format in `training-camp.md` and give one next action instead of overwhelming the learner.
 
 ## Default Output Contract
 
@@ -51,5 +57,7 @@ Every content deliverable should contain:
 - CTA that asks for a low-friction consultation rather than forcing a purchase
 - `合规状态`: `可进入人工复核`, `需要补充材料`, or `不建议发布`
 - Risk items, assumptions, and the exact evidence needed to resolve them
+
+When the user requests a training-camp deliverable, also include the camp day, learner task, submission artifact, acceptance criteria, and next-day connection.
 
 This Skill is a content-production assistant, not an insurer, broker, lawyer, financial adviser, or regulator.
