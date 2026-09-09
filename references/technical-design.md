@@ -1,5 +1,11 @@
 # Technical Design
 
+## Current Release Scope
+
+`v0.2.0` adds a bounded 7-day AI agent training experiment on top of the content-production Skill. It is not the complete V1 product and does not include cohort management, automated assignment collection, group messaging, payments, renewals, publishing, or outcome guarantees.
+
+The training module produces learner work artifacts: an AI work map, AI insurance advisor profile, weekly content library, video production pack, customer-management workflow, role-play report, AI agent workflow, and 30-day action plan.
+
 ## Product Positioning
 
 The Skill is the MVP for an eventual “insurance content growth and compliance pre-review” product. Its core value is not generic text generation or video rendering. It combines an insurance-domain content workflow, source-aware claims handling, beginner production guidance, a Jianying/Doubao production pack, and a human review checkpoint.
@@ -14,6 +20,7 @@ The Skill is the MVP for an eventual “insurance content growth and compliance 
 - CTA and public-comment reply suggestions
 - Evidence labels and compliance pre-review
 - Exportable structured output for manual Jianying and Doubao production
+- 7-day training tasks, learner submissions, assignment feedback, role-play practice, and graduation assessment
 
 ### Out of Scope for MVP
 
@@ -23,6 +30,7 @@ The Skill is the MVP for an eventual “insurance content growth and compliance 
 - Product database without a controlled update process
 - Collection or storage of health, identity, or financial data
 - Claims or sales conversion guarantees
+- Cohort database, automatic homework collection, group broadcast, payment, renewal, or coach CRM
 
 ## Suggested Software Architecture
 
@@ -33,6 +41,7 @@ The Skill is the MVP for an eventual “insurance content growth and compliance 
 5. `Review Layer`: rule checks plus human approval, with immutable version history.
 6. `Delivery Layer`: paste-ready narration, Doubao prompt pack, timeline map, subtitle text, and Jianying assembly checklist. Video rendering remains external.
 7. `Analytics Layer`: publish status, inquiry count, qualified inquiry, and user feedback. Do not infer sales causality from views alone.
+8. `Training Layer`: day-specific task, input checklist, submission artifact, acceptance criteria, feedback, graduation result, and next-day handoff. Keep it stateless in the Skill; a future coach tool may persist cohort records.
 
 ## Data Model Minimum
 
